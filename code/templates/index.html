@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename = '/css/index.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="logo">Mobility</div>
+        </header>
+        <div class="main">
+            <div class="left-side">
+                <h1>The mercury idol is dead.Not the desire to travel</h1>
+                <p>Open up to a new world and not to create one's own world in the other</p>
+            </div>
+            <div class="right-side">
+                <div class="error">
+                    {% if error %}
+                    <p><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                </div>
+                <form method="POST">
+                    <div class="field">
+                        <label for="email">Email adress</label>
+                        <input type="email" name="email" id="email" value = "{{request.form.email }}" required >
+                    </div>
+                    <div class="field">
+                        <label for="paswd">Password</label>
+                        <input type="password" id="paswd" name="pswd" autocomplete="false" minlength="8" required>
+                        <p>minimum of 8 characters</p>
+                    </div>
+                    <div class="sub-btn">
+                        <button type="submit" class="login-btn" name="login" id="btn">Logn in</button>
+                        <button type="submit" class="sign-btn" name="sign" id="ghost-btn">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script type = "text/javascript" src = "{{ url_for('static', filename = '/js/script.js') }}"></script>
+</html>

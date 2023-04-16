@@ -1,0 +1,148 @@
+:root{
+    --bg-smock : #00000080;
+    --txt-color: #fff;
+    --action-btn-bg: #FF2E00;
+    --ghost-btn-bg: #060018;
+    --form-bg-1 : rgba(0, 0, 0, 0.12) 0%;
+    --form-bg-2 : rgba(0, 0, 0, 0.02) 100%; 
+
+}
+
+@font-face {
+    font-family: "Josefin sans";
+    src: url("/static/fonts/JosefinSans-Regular.ttf");
+    font-display: swap;
+}
+ 
+@font-face {
+    font-family: "Inter";
+    src: url("/static/fonts/Inter-Regular.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ 
+html{
+    font-size: 62.5%;
+    width: 100%;
+    height: 100vh;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,var(--bg-smock),var(--bg-smock)), url("/static/images/bg.jpg") center no-repeat;
+    background-size: cover;
+    font-size: 1.8rem;
+    color: var(--txt-color);
+    font-family: "Inter", "Inter-Regular", sans-serif;
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+header{
+    padding-top: 5.9rem;
+}
+
+.main, header{
+    margin-left: 5.9rem;
+}
+
+h1,.logo{
+    font-family: "Josefin sans", "JosefinSans-Regular", sans-serif;
+ }
+
+.logo{
+    font-size: 3.6rem;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: max-content auto;
+    column-gap: 5rem;
+    align-items: center;
+}
+
+
+.left-side{
+    & h1{
+        font-size: 6rem;
+        width: 16ch;
+    }
+
+    & p{
+        font-size: 2.5rem;
+        width: 30ch;
+    }
+}
+
+form{
+    background: linear-gradient(145.61deg, var(--form-bg-1),var(--form-bg-2));
+    backdrop-filter: blur(4rem);
+    width: 30rem;
+    height: 45rem;
+    display: grid;
+    row-gap: 2.6rem;
+    padding: 0 4rem;
+    align-content: center;
+    justify-content: center;
+
+    & label{
+        font-size: 2rem;
+        font-family: inherit;
+    }
+
+}
+
+.field{
+    display: grid;
+    row-gap: 1rem;
+
+    & p{
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+}
+
+.sub-btn{
+    display: inline-flex;
+    column-gap: 1rem;
+    height: fit-content;
+}
+
+input[type="password"], input[type="email"]{
+    width: 25rem;
+    height: 4rem;
+    border: 0.05rem solid var(--txt-color);
+    outline: none;
+    padding-left: 1rem;
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.6rem;
+}
+
+input[type="button"],button{
+    appearance: none;
+    border: none;
+    width: fit-content;
+    padding: 1.1rem 2.2rem;
+    color: inherit;
+    font-size: 1.7rem;
+    font-family: inherit;
+}
+
+
+#btn{
+    background-color: var(--action-btn-bg);
+}
+
+#ghost-btn{
+    background-color: var(--ghost-btn-bg);
+}
+
+.error{
+    color: violet;
+}
